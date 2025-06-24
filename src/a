@@ -1,0 +1,222 @@
+import java.util.*;
+import java.util.stream.Collectors;
+
+// Interface ISolver mungkin Anda gunakan untuk menampung kedua solver. Ini praktik yang baik.
+public class MinesweeperSolver implements ISolver {
+
+    // Record internal untuk menyimpan koordinat (baris, kolom) agar lebih mudah dikelola.
+    private record Coordinate(int row, int col) {}
+
+    // Record internal untuk merepresentasikan sebuah langkah, lengkap dengan probabilitas bomnya.
+    private record InternalMove(MinesweeperGame.MoveType action, Coordinate coordinate, double probability) {}
+
+    // Variabel instance untuk menyimpan kondisi papan saat ini.
+    private int rows;
+    private int cols;
+    private char[][] board;
+    private int totalBombs;
+
+    /**
+     * Metode utama yang menjadi "otak" dari solver.
+     * Menerima kondisi papan dan total bom, lalu mengembalikan satu langkah terbaik.
+     * @param currentBoard Papan permainan saat ini.
+     * @param totalBombs Jumlah total bom di papan.
+     * @return Objek Move yang merepresentasikan aksi terbaik.
+     */
+    @Override
+    public MinesweeperGame.Move findNextMove(char[][] currentBoard, int totalBombs) {
+        // Inisialisasi variabel untuk pemanggilan saat ini.
+        this.board = currentBoard;
+        this.rows = board.length;
+        this.cols = board[0].length;
+        this.totalBombs = totalBombs;
+
+        // --- TAHAP 1: LOGIKA GREEDY DETERMINISTIK ---
+        // Mencari langkah-langkah yang 100% pasti terlebih dahulu.
+        List<InternalMove> certainMoves = findDeterministicMoves();
+        if (!certainMoves.isEmpty()) {
+            // Jika ditemukan langkah pasti (baik chording atau flagging), langsung eksekusi.
+            InternalMove move = certainMoves.get(0);
+            System.out.println("Langkah Pasti Ditemukan oleh Modul Greedy: " + move.action() + " di [" + move.coordinate().row + ", " + move.coordinate().col + "]");
+            return new MinesweeperGame.Move(move.action(), move.coordinate().col, move.coordinate().row);
+        }
+
+        // --- TAHAP 2: LOGIKA PROBABILISTIK (CSP) ---
+        // Tahap ini hanya berjalan jika tidak ada langkah pasti yang bisa diambil.
+        System.out.println("Tidak ada langkah pasti. Menjalankan Modul Analisis CSP...");
+        int knownFlags = countFlags();
+        int remainingBombs = this.totalBombs - knownFlags;
+
+        // Menganalisis pola-pola lokal di perbatasan antara sel terbuka dan tertutup.
+        List<InternalMove> probabilisticMoves = analyzeLocalPatternsAsCSP(remainingBombs);
+
+        // --- TAHAP 3: PENGAMBILAN KEPUTUSAN & FALLBACK ---
+        if (probabilisticMoves.isEmpty()) {
+            // Jika CSP tidak bisa menganalisis pola apapun (misal, semua sel terisolasi),
+            // solver menyerah dan melakukan tebakan acak sebagai jalan terakhir.
+            System.out.println("Analisis CSP tidak menemukan solusi. Melakukan tebakan acak sebagai fallback...");
+            return findRandomMove(); 
+        }
+
+        // Urutkan hasil dari CSP untuk menemukan langkah dengan probabilitas bom terendah.
+        probabilisticMoves.sort(Comparator.comparingDouble(InternalMove::probability));
+
+        // Ambil langkah terbaik (yang ada di urutan pertama setelah diurutkan).
+        InternalMove bestInternalMove = probabilisticMoves.get(0);
+        MinesweeperGame.MoveType finalAction = MinesweeperGame.MoveType.DIG;
+
+        // Tentukan aksi final berdasarkan probabilitasnya.
+        if (bestInternalMove.probability() == 0.0) {
+            finalAction = MinesweeperGame.MoveType.DIG;
+            System.out.println("Hasil CSP menemukan langkah 100% AMAN.");
+        } else if (bestInternalMove.probability() == 1.0) {
+            finalAction = MinesweeperGame.MoveType.FLAG;
+            System.out.println("Hasil CSP menemukan langkah 100% BOM.");
+        }
+
+        // Cetak dan kembalikan langkah terbaik yang ditemukan.
+        System.out.printf("Langkah terbaik berdasarkan probabilitas: %s di [%d, %d] (Prob Bom: %.2f%%)%n",
+                finalAction, bestInternalMove.coordinate().row, bestInternalMove.coordinate().col, bestInternalMove.probability() * 100);
+
+        return new MinesweeperGame.Move(finalAction, bestInternalMove.coordinate().col, bestInternalMove.coordinate().row);
+    }
+    
+    /**
+     * Modul Greedy: Mencari semua langkah yang 100% pasti.
+     * Memprioritaskan aksi "chording" (buka sekitar) untuk efisiensi.
+     */
+    private List<InternalMove> findDeterministicMoves() { 
+        List<InternalMove> chordingMoves = new ArrayList<>();
+        List<InternalMove> flaggingMoves = new ArrayList<>();
+
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (Character.isDigit(board[r][c])) {
+                    int numValue = Character.getNumericValue(board[r][c]);
+                    List<Coordinate> neighbors = getNeighbors(r, c);
+                    
+                    long flagCount = neighbors.stream()
+                        .filter(n -> board[n.row()][n.col()] == 'F').count();
+                    List<Coordinate> coveredNeighbors = neighbors.stream()
+                        .filter(n -> board[n.row()][n.col()] == 'C')
+                        .collect(Collectors.toList());
+
+                    // Aturan Aman (Chording): Jika angka = bendera, buka sekitar.
+                    if (numValue == flagCount && !coveredNeighbors.isEmpty()) {
+                        Coordinate chordCoord = new Coordinate(r, c);
+                        chordingMoves.add(new InternalMove(MinesweeperGame.MoveType.DIG, chordCoord, 0.0));
+                    }
+
+                    // Aturan Bom: Jika angka = bendera + sel tertutup, semua sel tertutup adalah bom.
+                    if (numValue == flagCount + coveredNeighbors.size() && !coveredNeighbors.isEmpty()) {
+                        coveredNeighbors.forEach(n -> flaggingMoves.add(new InternalMove(MinesweeperGame.MoveType.FLAG, n, 1.0)));
+                    }
+                }
+            }
+        }
+
+        // Prioritaskan aksi chording karena lebih efisien (membuka banyak sel sekaligus).
+        if (!chordingMoves.isEmpty()) {
+            System.out.println("Solver: Peluang 'Buka Sekitar' (Chording) terdeteksi.");
+            return chordingMoves;
+        }
+
+        // Jika tidak ada chording, baru lakukan flagging.
+        if (!flaggingMoves.isEmpty()) {
+            System.out.println("Solver: Langkah penandaan (FLAG) terdeteksi.");
+            return flaggingMoves;
+        }
+        
+        // Jika tidak ada aksi pasti sama sekali.
+        return Collections.emptyList();
+    }
+
+    /**
+     * Modul CSP: Menganalisis pola lokal untuk menghitung probabilitas bom yang akurat.
+     */
+    private List<InternalMove> analyzeLocalPatternsAsCSP(int remainingBombs) {
+        // 1. Cari semua sel tertutup ('C') yang bertetangga dengan angka. Ini adalah "frontier".
+        Set<Coordinate> frontier = new HashSet<>();
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (board[r][c] == 'C') {
+                    if (getNeighbors(r, c).stream().anyMatch(n -> Character.isDigit(board[n.row()][n.col()]))) {
+                        frontier.add(new Coordinate(r, c));
+                    }
+                }
+            }
+        }
+        if (frontier.isEmpty()) return Collections.emptyList();
+
+        // 2. Ambil satu grup sel frontier yang saling terhubung untuk dianalisis.
+        List<Coordinate> variables = findConnectedFrontier(frontier);
+        if (variables.isEmpty()) return Collections.emptyList();
+
+        // Inisialisasi untuk menyimpan hasil perhitungan.
+        Map<Coordinate, int[]> bombCounts = new HashMap<>(); // Key: koordinat, Value: [jumlah_kemunculan_sbg_bom]
+        variables.forEach(v -> bombCounts.put(v, new int[]{0}));
+        int[] totalSolutions = {0}; // Menyimpan total konfigurasi valid yang ditemukan.
+
+        // 3. Panggil mesin solver rekursif (backtracking).
+        solve(variables, remainingBombs, 0, 0, bombCounts, totalSolutions);
+
+        // 4. Jika tidak ditemukan solusi valid, kembalikan daftar kosong.
+        if (totalSolutions[0] == 0) return Collections.emptyList();
+
+        // 5. Hitung probabilitas untuk setiap sel berdasarkan hasil perhitungan.
+        return variables.stream()
+                .map(v -> {
+                    double probability = (double) bombCounts.get(v)[0] / totalSolutions[0];
+                    return new InternalMove(MinesweeperGame.MoveType.DIG, v, probability);
+                })
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Mesin Backtracking Rekursif: Mencari semua kemungkinan penempatan bom yang valid.
+     */
+    private void solve(List<Coordinate> variables, int remainingBombs, int index, int bombsPlaced,
+                       Map<Coordinate, int[]> bombCounts, int[] totalSolutions) {
+        
+        // Pruning (Pemangkasan): Cek apakah asumsi sejauh ini masih mungkin valid.
+        if (!isPartialConfigurationValid(variables, index)) {
+             return; // Jika tidak, hentikan cabang pencarian ini.
+        }
+
+        // Pruning: Jumlah bom yang ditempatkan sudah melebihi sisa bom.
+        if (bombsPlaced > remainingBombs) {
+            return;
+        }
+
+        // Base Case: Semua variabel (sel) telah diberi status (bom/aman).
+        if (index == variables.size()) {
+            // Lakukan cek final apakah seluruh konfigurasi konsisten.
+            if (isFinalConfigurationValid(variables)) {
+                 totalSolutions[0]++; // Tambah jumlah total solusi valid.
+                 // Catat sel mana saja yang merupakan bom dalam solusi valid ini.
+                 for (Coordinate v : variables) {
+                     if (board[v.row()][v.col()] == 'B') {
+                         bombCounts.get(v)[0]++;
+                     }
+                 }
+            }
+            return;
+        }
+
+        Coordinate currentVar = variables.get(index);
+
+        // --- PENCABANGAN REKURSIF ---
+        // Cabang 1: Asumsikan sel saat ini adalah BOM.
+        board[currentVar.row()][currentVar.col()] = 'B'; // 'B' sebagai penanda sementara
+        solve(variables, remainingBombs, index + 1, bombsPlaced + 1, bombCounts, totalSolutions);
+
+        // Cabang 2: Asumsikan sel saat ini adalah AMAN.
+        board[currentVar.row()][currentVar.col()] = '_'; // '_' sebagai penanda sementara
+        solve(variables, remainingBombs, index + 1, bombsPlaced, bombCounts, totalSolutions);
+
+        // Backtrack: Kembalikan status sel menjadi tertutup untuk eksplorasi cabang lain.
+        board[currentVar.row()][currentVar.col()] = 'C';
+    }
+    
+    // ... (Fungsi-fungsi helper lainnya seperti isPartialConfigurationValid, getNeighbors, dll.) ...
+}

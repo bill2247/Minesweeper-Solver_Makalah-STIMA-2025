@@ -1,15 +1,10 @@
-// File: GreedySolver.java
-// NOTE: Ini adalah file baru yang disesuaikan dari kode Anda.
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-// PERUBAHAN: Menambahkan 'implements ISolver'
 public class GreedySolver implements ISolver {
-
-    // PERUBAHAN: Bagian placeholder untuk MinesweeperGame dihapus karena kelas aslinya sudah ada.
 
     private record Coordinate(int row, int col) {}
 
@@ -17,14 +12,12 @@ public class GreedySolver implements ISolver {
     private int cols;
     private char[][] board;
 
-    // PERUBAHAN: Menambahkan anotasi @Override untuk kejelasan
     @Override
     public MinesweeperGame.Move findNextMove(char[][] currentBoard, int totalBombs) {
         this.board = currentBoard;
         this.rows = board.length;
         this.cols = board[0].length;
 
-        // 1. Mencari langkah deterministik
         List<MinesweeperGame.Move> certainMoves = findDeterministicMoves();
         if (!certainMoves.isEmpty()) {
             MinesweeperGame.Move move = certainMoves.get(0);
@@ -32,11 +25,9 @@ public class GreedySolver implements ISolver {
             return move;
         }
 
-        // 2. Jika tidak ada langkah pasti, lakukan tebakan acak
         System.out.println("GreedySolver: Tidak ada langkah pasti. Melakukan tebakan acak...");
         return findRandomMove();
     }
-
 
     private List<MinesweeperGame.Move> findDeterministicMoves() {
         List<MinesweeperGame.Move> chordingMoves = new ArrayList<>();
@@ -54,14 +45,12 @@ public class GreedySolver implements ISolver {
                         .filter(n -> board[n.row()][n.col()] == 'C')
                         .collect(Collectors.toList());
 
-                    // PELUANG CHORDING (Aturan Aman Dasar yang Ditingkatkan)
                     if (numValue == flagCount && !coveredNeighbors.isEmpty()) {
                         Coordinate chordCoord = new Coordinate(r, c);
-                        // Tambahkan aksi DIG pada sel angka itu sendiri
+                        
                         chordingMoves.add(new MinesweeperGame.Move(MinesweeperGame.MoveType.DIG, chordCoord.col, chordCoord.row));
                     }
 
-                    // ATURAN BOM DASAR (tidak berubah)
                     if (numValue == flagCount + coveredNeighbors.size() && !coveredNeighbors.isEmpty()) {
                         for (Coordinate n : coveredNeighbors) {
                             flaggingMoves.add(new MinesweeperGame.Move(MinesweeperGame.MoveType.FLAG, n.col, n.row));
@@ -71,19 +60,16 @@ public class GreedySolver implements ISolver {
             }
         }
 
-        // Prioritaskan aksi chording
         if (!chordingMoves.isEmpty()) {
             System.out.println("GreedySolver: Peluang 'Buka Sekitar' (Chording) terdeteksi.");
             return chordingMoves;
         }
 
-        // Jika tidak ada peluang chording, lakukan aksi flagging
         if (!flaggingMoves.isEmpty()) {
             System.out.println("GreedySolver: Langkah penandaan (FLAG) terdeteksi.");
             return flaggingMoves;
         }
         
-        // Jika tidak ada aksi deterministik sama sekali
         return Collections.emptyList();
     }
 
