@@ -1,0 +1,132 @@
+Masukkan nama kasus uji (misal: case1): 
+--- Pilih Solver ---
+1: Hybrid Solver (Greedy + CSP)
+2: Classic Greedy Solver
+Pilihan Anda (1/2): 
+Menggunakan solver: Classic Greedy Solver
+Membaca file konfigurasi dari: test/2.txt
+Konfigurasi papan diterima.
+
+--- Papan Awal (Solver: Classic Greedy Solver) ---
+
+--- Langkah ke-0 ---
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+GreedySolver: Tidak ada langkah pasti. Melakukan tebakan acak...
+GreedySolver: Memilih sel acak di [4, 14]
+
+--- Langkah ke-1 ---
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+GreedySolver: Tidak ada langkah pasti. Melakukan tebakan acak...
+GreedySolver: Memilih sel acak di [7, 14]
+
+--- Langkah ke-2 ---
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+GreedySolver: Tidak ada langkah pasti. Melakukan tebakan acak...
+GreedySolver: Memilih sel acak di [9, 0]
+
+--- Langkah ke-3 ---
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+B C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+
+
+--- PERMAINAN SELESAI (Solver: Classic Greedy Solver) ---
+Status: GAGAL! (Kalah)
+
+--- Langkah ke-4 ---
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C 1 C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+B C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 _ _ 1 C C C C C C C 
+C C C C C C C C C 1 1 1 1 C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+C C C C C C C C C C C C C C C C C C C C 
+Waktu Permainan: 18 ms
+Jumlah Langkah: 3

@@ -1,0 +1,459 @@
+Masukkan nama kasus uji (misal: case1): 
+--- Pilih Solver ---
+1: Hybrid Solver (Greedy + CSP)
+2: Classic Greedy Solver
+Pilihan Anda (1/2): 
+Menggunakan solver: Hybrid Solver (Greedy + CSP)
+Membaca file konfigurasi dari: test/1.txt
+Konfigurasi papan diterima.
+
+--- Papan Awal (Solver: Hybrid Solver (Greedy + CSP)) ---
+
+--- Langkah ke-0 ---
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C 2 1 1 2 C C 
+C C C C 1 _ _ 1 C C 
+C C C C 1 1 1 1 C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+Tidak ada langkah pasti. Menjalankan Modul Analisis CSP...
+Analisis CSP tidak menemukan solusi. Melakukan tebakan acak sebagai fallback...
+
+--- Langkah ke-1 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C 2 1 1 2 C C 
+C C C C 1 _ _ 1 C C 
+C C C C 1 1 1 1 C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+Tidak ada langkah pasti. Menjalankan Modul Analisis CSP...
+Analisis CSP tidak menemukan solusi. Melakukan tebakan acak sebagai fallback...
+
+--- Langkah ke-2 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C 2 1 1 2 C C 
+1 2 C C 1 _ _ 1 C C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 C 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [5, 2]
+
+--- Langkah ke-3 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C 2 1 1 2 C C 
+1 2 F C 1 _ _ 1 C C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 C 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [5, 3]
+
+--- Langkah ke-4 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C 2 1 1 2 C C 
+1 2 F 2 1 _ _ 1 C C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 C 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [4, 3]
+
+--- Langkah ke-5 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C F 2 1 1 2 C C 
+1 2 F 2 1 _ _ 1 C C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 C 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [4, 2]
+
+--- Langkah ke-6 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C 3 F 2 1 1 2 C C 
+1 2 F 2 1 _ _ 1 C C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 C 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [7, 5]
+
+--- Langkah ke-7 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C 3 F 2 1 1 2 C C 
+1 2 F 2 1 _ _ 1 C C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [5, 8]
+
+--- Langkah ke-8 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C 3 F 2 1 1 2 C C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [4, 8]
+
+--- Langkah ke-9 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [3, 7]
+
+--- Langkah ke-10 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C 1 C C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [3, 8]
+
+--- Langkah ke-11 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [3, 6]
+
+--- Langkah ke-12 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [2, 6]
+
+--- Langkah ke-13 ---
+C C C C C C C C 1 C 
+C C C C C C C C C C 
+C C C C C C 1 C C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [1, 5]
+
+--- Langkah ke-14 ---
+C C C C C C C C 1 C 
+C C C C C 1 C C C C 
+C C C C C C 1 C C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [1, 6]
+
+--- Langkah ke-15 ---
+C C C C C 1 _ 1 1 C 
+C C C C C 1 _ 1 C C 
+C C C C C 1 1 2 C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [1, 8]
+
+--- Langkah ke-16 ---
+C C C C C 1 _ 1 1 C 
+C C C C C 1 _ 1 F C 
+C C C C C 1 1 2 C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [0, 9]
+
+--- Langkah ke-17 ---
+C C C C C 1 _ 1 1 1 
+C C C C C 1 _ 1 F C 
+C C C C C 1 1 2 C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [1, 9]
+
+--- Langkah ke-18 ---
+C C C C C 1 _ 1 1 1 
+C C C C C 1 _ 1 F 2 
+C C C C C 1 1 2 C C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [2, 8]
+
+--- Langkah ke-19 ---
+C C C C C 1 _ 1 1 1 
+C C C C C 1 _ 1 F 2 
+C C C C C 1 1 2 2 C 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [2, 9]
+
+--- Langkah ke-20 ---
+C C C C C 1 _ 1 1 1 
+C C C C C 1 _ 1 F 2 
+C C C C C 1 1 2 2 F 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [1, 4]
+
+--- Langkah ke-21 ---
+C C C C C 1 _ 1 1 1 
+C C C C 1 1 _ 1 F 2 
+C C C C C 1 1 2 2 F 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [0, 4]
+
+--- Langkah ke-22 ---
+C C C C F 1 _ 1 1 1 
+C C C C 1 1 _ 1 F 2 
+C C C C C 1 1 2 2 F 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [0, 3]
+
+--- Langkah ke-23 ---
+C C C 1 F 1 _ 1 1 1 
+C C C C 1 1 _ 1 F 2 
+C C C C C 1 1 2 2 F 
+C C C C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [0, 2]
+
+--- Langkah ke-24 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 C 1 1 2 2 F 
+1 1 2 C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [2, 4]
+
+--- Langkah ke-25 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 C C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [3, 3]
+
+--- Langkah ke-26 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F C C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [3, 4]
+
+--- Langkah ke-27 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 C F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [3, 5]
+
+--- Langkah ke-28 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 1 F 1 1 C 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [3, 9]
+
+--- Langkah ke-29 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 1 F 1 1 1 
+C C 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [4, 1]
+
+--- Langkah ke-30 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 1 F 1 1 1 
+C 2 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: FLAG di [4, 0]
+
+--- Langkah ke-31 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 1 F 1 1 1 
+F 2 3 F 2 1 1 2 1 C 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [4, 9]
+
+--- Langkah ke-32 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 1 F 1 1 1 
+F 2 3 F 2 1 1 2 1 1 
+1 2 F 2 1 _ _ 1 F C 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+Langkah Pasti Ditemukan oleh Modul Greedy: DIG di [5, 9]
+
+--- Langkah ke-33 ---
+_ _ _ 1 F 1 _ 1 1 1 
+_ _ _ 1 1 1 _ 1 F 2 
+_ _ 1 1 1 1 1 2 2 F 
+1 1 2 F 2 1 F 1 1 1 
+F 2 3 F 2 1 1 2 1 1 
+1 2 F 2 1 _ _ 1 F 1 
+_ 1 1 1 1 1 1 1 1 1 
+_ _ _ _ 1 F 1 _ _ _ 
+_ _ _ _ 1 1 1 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+
+
+--- PERMAINAN SELESAI (Solver: Hybrid Solver (Greedy + CSP)) ---
+Status: BERHASIL! (Menang)
+Waktu Permainan: 75 ms
+Jumlah Langkah: 33

@@ -1,0 +1,112 @@
+--- Hasil Analisis Kinerja Solver ---
+
+Konfigurasi      : 1.txt (10x10, 10 bom)
+Solver Digunakan : Hybrid (Greedy + CSP)
+Jumlah Percobaan : 100
+
+--- Ringkasan Statistik ---
+Jumlah Keberhasilan: 99 (99.00%)
+Jumlah Kegagalan   : 1
+Rata-rata Waktu    : 1.33 ms (untuk percobaan yang berhasil)
+Rata-rata Langkah  : 23.95 langkah (untuk percobaan yang berhasil)
+
+--- Rincian Percobaan yang Berhasil ---
+Percobaan #1: Waktu = 23 ms, Langkah = 23
+Percobaan #2: Waktu = 7 ms, Langkah = 34
+Percobaan #3: Waktu = 31 ms, Langkah = 29
+Percobaan #4: Waktu = 2 ms, Langkah = 18
+Percobaan #5: Waktu = 2 ms, Langkah = 22
+Percobaan #6: Waktu = 8 ms, Langkah = 30
+Percobaan #7: Waktu = 12 ms, Langkah = 26
+Percobaan #8: Waktu = 2 ms, Langkah = 25
+Percobaan #9: Waktu = 2 ms, Langkah = 31
+Percobaan #10: Waktu = 1 ms, Langkah = 23
+Percobaan #11: Waktu = 1 ms, Langkah = 22
+Percobaan #12: Waktu = 1 ms, Langkah = 30
+Percobaan #13: Waktu = 1 ms, Langkah = 23
+Percobaan #14: Waktu = 1 ms, Langkah = 16
+Percobaan #15: Waktu = 0 ms, Langkah = 19
+Percobaan #16: Waktu = 1 ms, Langkah = 29
+Percobaan #17: Waktu = 1 ms, Langkah = 21
+Percobaan #18: Waktu = 1 ms, Langkah = 26
+Percobaan #19: Waktu = 1 ms, Langkah = 29
+Percobaan #20: Waktu = 0 ms, Langkah = 17
+Percobaan #21: Waktu = 2 ms, Langkah = 23
+Percobaan #22: Waktu = 1 ms, Langkah = 21
+Percobaan #23: Waktu = 1 ms, Langkah = 32
+Percobaan #24: Waktu = 1 ms, Langkah = 31
+Percobaan #25: Waktu = 0 ms, Langkah = 12
+Percobaan #26: Waktu = 1 ms, Langkah = 19
+Percobaan #27: Waktu = 0 ms, Langkah = 17
+Percobaan #28: Waktu = 0 ms, Langkah = 19
+Percobaan #29: Waktu = 1 ms, Langkah = 33
+Percobaan #30: Waktu = 0 ms, Langkah = 22
+Percobaan #31: Waktu = 0 ms, Langkah = 18
+Percobaan #32: Waktu = 1 ms, Langkah = 26
+Percobaan #33: Waktu = 0 ms, Langkah = 24
+Percobaan #34: Waktu = 1 ms, Langkah = 22
+Percobaan #35: Waktu = 2 ms, Langkah = 23
+Percobaan #36: Waktu = 0 ms, Langkah = 16
+Percobaan #37: Waktu = 0 ms, Langkah = 23
+Percobaan #38: Waktu = 0 ms, Langkah = 26
+Percobaan #39: Waktu = 0 ms, Langkah = 19
+Percobaan #40: Waktu = 0 ms, Langkah = 27
+Percobaan #41: Waktu = 0 ms, Langkah = 15
+Percobaan #42: Waktu = 0 ms, Langkah = 28
+Percobaan #43: Waktu = 0 ms, Langkah = 21
+Percobaan #44: Waktu = 1 ms, Langkah = 25
+Percobaan #45: Waktu = 1 ms, Langkah = 17
+Percobaan #46: Waktu = 1 ms, Langkah = 23
+Percobaan #47: Waktu = 1 ms, Langkah = 29
+Percobaan #48: Waktu = 0 ms, Langkah = 22
+Percobaan #49: Waktu = 1 ms, Langkah = 26
+Percobaan #50: Waktu = 0 ms, Langkah = 14
+Percobaan #51: Waktu = 0 ms, Langkah = 13
+Percobaan #52: Waktu = 0 ms, Langkah = 23
+Percobaan #53: Waktu = 1 ms, Langkah = 29
+Percobaan #54: Waktu = 1 ms, Langkah = 35
+Percobaan #55: Waktu = 1 ms, Langkah = 25
+Percobaan #56: Waktu = 1 ms, Langkah = 29
+Percobaan #57: Waktu = 3 ms, Langkah = 24
+Percobaan #58: Waktu = 0 ms, Langkah = 25
+Percobaan #59: Waktu = 0 ms, Langkah = 21
+Percobaan #60: Waktu = 0 ms, Langkah = 27
+Percobaan #61: Waktu = 0 ms, Langkah = 25
+Percobaan #62: Waktu = 0 ms, Langkah = 25
+Percobaan #63: Waktu = 0 ms, Langkah = 19
+Percobaan #64: Waktu = 1 ms, Langkah = 32
+Percobaan #65: Waktu = 0 ms, Langkah = 16
+Percobaan #66: Waktu = 1 ms, Langkah = 24
+Percobaan #67: Waktu = 0 ms, Langkah = 26
+Percobaan #68: Waktu = 0 ms, Langkah = 24
+Percobaan #69: Waktu = 0 ms, Langkah = 35
+Percobaan #70: Waktu = 0 ms, Langkah = 29
+Percobaan #71: Waktu = 0 ms, Langkah = 25
+Percobaan #72: Waktu = 0 ms, Langkah = 20
+Percobaan #73: Waktu = 0 ms, Langkah = 28
+Percobaan #74: Waktu = 9 ms, Langkah = 28
+Percobaan #75: Waktu = 0 ms, Langkah = 18
+Percobaan #76: Waktu = 0 ms, Langkah = 24
+Percobaan #77: Waktu = 0 ms, Langkah = 22
+Percobaan #78: Waktu = 0 ms, Langkah = 16
+Percobaan #79: Waktu = 0 ms, Langkah = 21
+Percobaan #80: Waktu = 0 ms, Langkah = 31
+Percobaan #81: Waktu = 0 ms, Langkah = 18
+Percobaan #82: Waktu = 0 ms, Langkah = 21
+Percobaan #83: Waktu = 0 ms, Langkah = 20
+Percobaan #84: Waktu = 0 ms, Langkah = 22
+Percobaan #85: Waktu = 0 ms, Langkah = 29
+Percobaan #86: Waktu = 0 ms, Langkah = 22
+Percobaan #87: Waktu = 0 ms, Langkah = 35
+Percobaan #88: Waktu = 0 ms, Langkah = 21
+Percobaan #89: Waktu = 0 ms, Langkah = 29
+Percobaan #90: Waktu = 0 ms, Langkah = 20
+Percobaan #91: Waktu = 0 ms, Langkah = 23
+Percobaan #92: Waktu = 0 ms, Langkah = 41
+Percobaan #93: Waktu = 0 ms, Langkah = 29
+Percobaan #94: Waktu = 0 ms, Langkah = 22
+Percobaan #95: Waktu = 0 ms, Langkah = 20
+Percobaan #96: Waktu = 0 ms, Langkah = 22
+Percobaan #97: Waktu = 0 ms, Langkah = 18
+Percobaan #98: Waktu = 0 ms, Langkah = 30
+Percobaan #99: Waktu = 0 ms, Langkah = 24

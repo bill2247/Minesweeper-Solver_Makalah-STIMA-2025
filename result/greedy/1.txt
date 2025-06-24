@@ -1,0 +1,472 @@
+Masukkan nama kasus uji (misal: case1): 
+--- Pilih Solver ---
+1: Hybrid Solver (Greedy + CSP)
+2: Classic Greedy Solver
+Pilihan Anda (1/2): 
+Menggunakan solver: Classic Greedy Solver
+Membaca file konfigurasi dari: test/1.txt
+Konfigurasi papan diterima.
+
+--- Papan Awal (Solver: Classic Greedy Solver) ---
+
+--- Langkah ke-0 ---
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C 1 1 1 1 1 C 
+C C C C 1 _ _ _ 1 C 
+C C C C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Tidak ada langkah pasti. Melakukan tebakan acak...
+GreedySolver: Memilih sel acak di [1, 0]
+
+--- Langkah ke-1 ---
+_ 1 C C C C C C C C 
+_ 1 C C C C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [1, 2]
+
+--- Langkah ke-2 ---
+_ 1 C C C C C C C C 
+_ 1 F C C C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [0, 2]
+
+--- Langkah ke-3 ---
+_ 1 1 C C C C C C C 
+_ 1 F C C C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [0, 3]
+
+--- Langkah ke-4 ---
+_ 1 1 2 C C C C C C 
+_ 1 F C C C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [1, 3]
+
+--- Langkah ke-5 ---
+_ 1 1 2 C C C C C C 
+_ 1 F 2 C C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [1, 4]
+
+--- Langkah ke-6 ---
+_ 1 1 2 C C C C C C 
+_ 1 F 2 F C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [0, 4]
+
+--- Langkah ke-7 ---
+_ 1 1 2 1 C C C C C 
+_ 1 F 2 F C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [0, 5]
+
+--- Langkah ke-8 ---
+_ 1 1 2 1 1 C C C C 
+_ 1 F 2 F C C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [1, 5]
+
+--- Langkah ke-9 ---
+_ 1 1 2 1 1 C C C C 
+_ 1 F 2 F 1 C C C C 
+_ 1 1 2 1 2 C C C C 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [0, 6]
+
+--- Langkah ke-10 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 C C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [3, 6]
+
+--- Langkah ke-11 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F C C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [3, 7]
+
+--- Langkah ke-12 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 C C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [3, 8]
+
+--- Langkah ke-13 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 C 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [3, 9]
+
+--- Langkah ke-14 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 C 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [4, 9]
+
+--- Langkah ke-15 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 C 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [5, 3]
+
+--- Langkah ke-16 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 C 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [5, 9]
+
+--- Langkah ke-17 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 C 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [6, 3]
+
+--- Langkah ke-18 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [6, 9]
+
+--- Langkah ke-19 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+C C C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 1]
+
+--- Langkah ke-20 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+C 2 C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [7, 0]
+
+--- Langkah ke-21 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 C C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 2]
+
+--- Langkah ke-22 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 C C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 3]
+
+--- Langkah ke-23 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 C C C C C C 
+C C C C C C C C C C 
+C C C C C C C C C C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 4]
+
+--- Langkah ke-24 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 C C C C 
+C C C 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [7, 6]
+
+--- Langkah ke-25 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F C C C 
+C C C 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 7]
+
+--- Langkah ke-26 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 C C 
+C C C 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 8]
+
+--- Langkah ke-27 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 C 
+C C C 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [7, 9]
+
+--- Langkah ke-28 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+C C C 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> FLAG di [8, 2]
+
+--- Langkah ke-29 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+C C F 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [8, 0]
+
+--- Langkah ke-30 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+1 C F 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [8, 1]
+
+--- Langkah ke-31 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+1 2 F 1 _ 1 1 1 1 C 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [8, 9]
+
+--- Langkah ke-32 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+1 2 F 1 _ 1 1 1 1 1 
+C C C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [9, 0]
+
+--- Langkah ke-33 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+1 2 F 1 _ 1 1 1 1 1 
+_ 1 C 1 _ _ _ _ 1 C 
+GreedySolver: Langkah Pasti Ditemukan -> DIG di [9, 2]
+
+--- Langkah ke-34 ---
+_ 1 1 2 1 1 _ _ _ _ 
+_ 1 F 2 F 1 _ _ _ _ 
+_ 1 1 2 1 2 1 1 1 1 
+_ _ _ _ _ 1 F 1 1 F 
+_ _ 1 1 1 1 1 1 1 1 
+_ _ 1 F 1 _ _ _ 1 1 
+1 1 1 1 1 1 1 1 1 F 
+F 2 1 1 _ 1 F 1 1 1 
+1 2 F 1 _ 1 1 1 1 1 
+_ 1 1 1 _ _ _ _ 1 C 
+
+
+--- PERMAINAN SELESAI (Solver: Classic Greedy Solver) ---
+Status: BERHASIL! (Menang)
+Waktu Permainan: 55 ms
+Jumlah Langkah: 34
+
